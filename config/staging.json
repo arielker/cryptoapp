@@ -2,14 +2,15 @@
     "app": {
         "port": 3000,
         "io": {
-            "port": 8186
+            "port": 8084
         }
     },
     "io": {
         "port": 3000
     },
     "mysql": {
-        "host": "mysql"
+        "host": "mysql",
+        "port": 3306
     },
     "mongo": {
         "host": "mongo"

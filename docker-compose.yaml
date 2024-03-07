@@ -26,8 +26,11 @@ services:
       context: .
       dockerfile: ./Dockerfile.io
     ports:
-      - 8186:3000
+      - 8084:3000
   worker:
+    depends_on:
+      mysql:
+        condition: service_healthy
     environment:
       NODE_ENV: staging
     build:
@@ -39,7 +42,7 @@ services:
         condition: service_healthy
     environment:
       NODE_ENV: staging
-      GITHUB_CLIENT_SECRET: 7cd0a07e7784d2714a541093c263e49cf0bc70d0
+      GITHUB_CLIENT_SECRET: a45b937c30f7fc270194cda3426b1b6f54f2c714
     build:
       context: .
       dockerfile: ./Dockerfile.app
