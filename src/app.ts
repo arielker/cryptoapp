@@ -33,7 +33,6 @@ server.use(session({
 }));
 
 server.use(auth.initialize())
-server.use()
 
 // general middlewares
 server.use(session({
