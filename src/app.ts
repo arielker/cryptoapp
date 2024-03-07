@@ -2,6 +2,7 @@
 import express from 'express';
 import usersRouter from './routers/users';
 import guestsRouter from './routers/guests';
+import githubRouter from './routers/github';
 import path from 'path';
 import config from 'config';
 import errorHandler from './middlewares/error/error-handler';
@@ -41,8 +42,9 @@ server.use(auth.session());
 server.use(express.urlencoded())
 
 // routing
-server.use('/', guestsRouter);
+server.use('/guests', guestsRouter);
 server.use('/users', usersRouter);
+server.use('/github', githubRouter);
 
 // error middlewares
 server.use(errorHandler);
