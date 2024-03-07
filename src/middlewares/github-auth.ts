@@ -1,6 +1,6 @@
+import config from "config";
 import passport from "passport";
-import { Strategy } from "passport-github2";
-
+import { Strategy } from 'passport-github2';
 
 passport.serializeUser((user, done) => {
     done(null, user);
@@ -10,12 +10,8 @@ passport.deserializeUser((user, done) => {
     done(null, user);
 });
 
-passport.use(new Strategy({
-
-    },
-    async (email, password, done) => {
-
-    }
-));
+passport.use(new Strategy(config.get('github'), function (accessToken, refreshToken, profile, done) {
+    
+}))
 
 export default passport;

@@ -13,7 +13,7 @@ export async function dashboard (req: Request, res: Response, next: NextFunction
         res.render('users/dashboard', {
             userSymbols,
             symbolValues,
-            io: config.get(`app.io`)
+            io: config.get('app.io')            
         });
     } catch (err) {
         next(err)

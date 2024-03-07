@@ -1,17 +1,17 @@
 {
     "app": {
         "port": 8082,
-        "io": {
+        "io" : {
             "host": "localhost",
             "port": 8084
         }
     },
     "worker": {
         "interval": 30000,
-        "io": {
+        "io" : {
             "host": "localhost",
             "port": 8084
-        }        
+        }
     },
     "io": {
         "port": 8084
@@ -28,7 +28,7 @@
         "port": 27017,
         "database": "cryptoapp"
     },
-    "github":{
+    "github": {
         "clientID": "d2f730a096f7219f1a30",
         "clientSecret": "",
         "callbackURL": "http://localhost:8082/github/callback"
